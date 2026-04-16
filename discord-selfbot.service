@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord Selfbot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/discord-selfbot
+Environment="PATH=/root/discord-selfbot/venv/bin"
+ExecStart=/root/discord-selfbot/venv/bin/python /root/discord-selfbot/main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
